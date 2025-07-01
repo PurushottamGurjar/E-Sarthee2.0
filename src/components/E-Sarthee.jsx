@@ -95,7 +95,9 @@ const ESarthee = () => {
              </div>
 
 
-            <div className="sarthee-menu-install" onClick={()=>window.open("https://drive.google.com/file/d/1lSNbT9ABIMsVvzVEMcvJyil7_FJzCp4A/view?usp=sharing","_self")}>Install App now</div>
+            <div className="sarthee-menu-install" onClick={()=>window.open("https://drive.google.com/file/d/1lSNbT9ABIMsVvzVEMcvJyil7_FJzCp4A/view?usp=sharing","_self")}>
+              <img src={sartheeIcons.ESarthee_Logo} alt="E-Sarthee" className="E-Sarthee-logo" />
+              Install App now</div>
           
           </div>}
         
