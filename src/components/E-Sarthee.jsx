@@ -48,9 +48,11 @@ const ESarthee = () => {
         <div className="sarthee-heading">
           <div className="sarthee-heading-first">E-Sarthee</div>
           <div className="sarthee-heading-second">
-            <div className="nav-about  each-nav-item">&lt;About Developer&gt;</div>
-            <div className="nav-connect each-nav-item">Connect</div>
-            <div className="nav-contact each-nav-item">Contact</div>
+            <div className="nav-about  each-nav-item" onClick={()=>window.open("https://purushottam-gurjar.vercel.app",'_self')}>&lt;About Developer&gt;</div>
+            <div className="nav-connect each-nav-item" onClick={()=>window.open("https://www.linkedin.com/in/purushottam-gurjar/",'_self')} >Connect</div>
+            <div className="nav-connect each-nav-item" onClick={()=>window.open("https://github.com/PurushottamGurjar/E-Sarthee2.0",'_self')} >Contribute</div>
+            <div className="nav-contact each-nav-item" onClick={()=>window.open("https://contact-purushottam-gurjar.vercel.app",'_self')}>Contact</div>
+            
             <div className="nav-install each-nav-item">Install App</div>
           </div>
           <div className="sarthee-menu">
@@ -62,22 +64,27 @@ const ESarthee = () => {
         
           {isMenu && <div className="sarthee-menu-content">
 
-             <div className="sarthee-menu-each-item">
+             <div className="sarthee-menu-each-item"
+              onClick={()=>window.open("https://purushottam-gurjar.vercel.app",'_self')}>
               <div className="">About Developer</div>
               <img src={sartheeIcons.rightarrow_icon} alt="open" />
              </div>
 
-             <div className="sarthee-menu-each-item">
+             <div className="sarthee-menu-each-item"
+             onClick={()=>window.open("https://www.linkedin.com/in/purushottam-gurjar/",'_self')}>
               <div className="">Connect on LinkedIn</div>
               <img src={sartheeIcons.rightarrow_icon} alt="open" />
              </div>
 
-             <div className="sarthee-menu-each-item">
-              <div className="">Install App</div>
+             <div className="sarthee-menu-each-item"
+             onClick={()=>window.open("https://github.com/PurushottamGurjar/E-Sarthee2.0",'_self')}>
+              <div className="">Contribute - Github</div>
               <img src={sartheeIcons.rightarrow_icon} alt="open" />
              </div>
 
-             <div className="sarthee-menu-each-item">
+
+             <div className="sarthee-menu-each-item"
+             onClick={()=>window.open("https://contact-purushottam-gurjar.vercel.app",'_self')}>
               <div className="">Contact</div>
               <img src={sartheeIcons.rightarrow_icon} alt="open" />
              </div>
