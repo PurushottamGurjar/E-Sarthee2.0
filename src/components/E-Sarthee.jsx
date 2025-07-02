@@ -92,8 +92,6 @@ const ESarthee = () => {
           <div className="nav-install each-nav-item">Install App</div>
         </div>
         <div className="sarthee-menu">
-          {/* {!isMenu && <img  className="sarthee-menu-icon" src={sartheeIcons.menu_icon2} alt="Menu" onClick={()=>setIsMenu(true)}/>}
-            {isMenu && <img  className="sarthee-menu-icon" src={sartheeIcons.cross_icon} alt="cross" onClick={()=>setIsMenu(false)} />} */}
           {!isMenu && (
             <div>
               <svg
@@ -144,12 +142,7 @@ const ESarthee = () => {
 
           <div
             className="sarthee-menu-each-item"
-            onClick={() =>
-              window.open(
-                "https://www.linkedin.com/in/purushottam-gurjar/",
-                "_self"
-              )
-            }
+            onClick={() =>window.open("https://www.linkedin.com/in/purushottam-gurjar/","_self")}
           >
             <div className="">Connect on LinkedIn</div>
             <img src={sartheeIcons.rightarrow_icon} alt="open" />
@@ -157,12 +150,7 @@ const ESarthee = () => {
 
           <div
             className="sarthee-menu-each-item"
-            onClick={() =>
-              window.open(
-                "https://github.com/PurushottamGurjar/E-Sarthee2.0",
-                "_self"
-              )
-            }
+            onClick={() =>window.open( "https://github.com/PurushottamGurjar/E-Sarthee2.0","_self")}
           >
             <div className="">Contribute - Github</div>
             <img src={sartheeIcons.rightarrow_icon} alt="open" />
@@ -170,12 +158,7 @@ const ESarthee = () => {
 
           <div
             className="sarthee-menu-each-item"
-            onClick={() =>
-              window.open(
-                "https://contact-purushottam-gurjar.vercel.app",
-                "_self"
-              )
-            }
+            onClick={() =>window.open(  "https://contact-purushottam-gurjar.vercel.app","_self")}
           >
             <div className="">Contact</div>
             <img src={sartheeIcons.rightarrow_icon} alt="open" />
@@ -188,19 +171,13 @@ const ESarthee = () => {
 
           <div
             className="sarthee-menu-install"
-            onClick={() =>
-              window.open(
-                "https://drive.google.com/file/d/1lSNbT9ABIMsVvzVEMcvJyil7_FJzCp4A/view?usp=sharing",
-                "_self"
-              )
-            }
+            onClick={() =>window.open( "https://drive.google.com/file/d/1lSNbT9ABIMsVvzVEMcvJyil7_FJzCp4A/view?usp=sharing", "_self")}
             style={{ backgroundColor: color }}
           >
             <img
               src={sartheeIcons.ESarthee_Logo}
               alt="E-Sarthee"
-              className="E-Sarthee-logo"
-              
+              className="E-Sarthee-logo" 
             />
             Install App now
           </div>

@@ -109,10 +109,9 @@
     position:fixed;
     bottom:40px;
     width:90vw;
-    /* padding:15px; */
     padding:10px;
     box-sizing: border-box;
-    font-size:30px;
+    font-size:25px;
     font-weight: bold;
     font-family: sans-serif;
     border-radius: 10px;
