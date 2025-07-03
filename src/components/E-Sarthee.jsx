@@ -20,15 +20,38 @@ const ESarthee = () => {
     setTheme("dark");
     setcolor("#48ff91");
     setBgColor("#1B1B1C");
-    setSecBgColor("#242426")
+    setSecBgColor("#242426");
 
+    if (map.current) {
+      map.current.eachLayer((layer) => {
+        if (layer instanceof L.TileLayer) {
+          map.current.removeLayer(layer);
+        }
+      });
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+        maxZoom: 20,
+        attribution: "&copy; <a href=\"https://carto.com/\">CartoDB</a> contributors",
+      }).addTo(map.current);
+    }
     
   }
   const ChangeThemeToLight=()=>{
     setTheme("light");
     setcolor("#007BFF");
     setBgColor("#f4f4f7");
-    setSecBgColor("#ffffff")
+    setSecBgColor("#ffffff");
+
+    if (map.current) {
+      map.current.eachLayer((layer) => {
+        if (layer instanceof L.TileLayer) {
+          map.current.removeLayer(layer);
+        }
+      });
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 20,
+        attribution: "&copy; OpenStreetMap | Purushottam Gurjar",
+      }).addTo(map.current);
+    }
     
   }
 
