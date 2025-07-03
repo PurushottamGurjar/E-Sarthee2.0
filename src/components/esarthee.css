@@ -130,13 +130,23 @@
     height:30px;
     border-radius:4px;
 }
+.theme-moon{
+    border:2px solid black;
+    padding: 5px;
+    display:flex;
+    align-items: center;
+    border-radius: 20px;
+    background-color:#ffffff;
+
+}
 
 @media(max-width:1023px){
     .sarthee-heading-second{
         display:none;
     }
     .sarthee-menu{
-        display:block;
+        display:flex;
+        gap:20px;
     }
 }
 @media(min-width:1024px){
