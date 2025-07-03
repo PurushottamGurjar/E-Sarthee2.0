@@ -8,7 +8,7 @@ const socket = io("https://e-sarthee.onrender.com");
 const ESarthee = () => {
   const [color, setcolor] = useState("#007BFF"); //green #008000 //blue #007BFF //amother green #0500ff
   const [bgColor,setBgColor]=useState("#f4f4f7"); //#f4f4f7
-  const [secBgColor, setSecBgColor]=useState("#242426")
+  const [secBgColor, setSecBgColor]=useState("#ffffff")
   const [theme , setTheme]=useState("light");
   const [isMenu, setIsMenu] = useState(false);
   const map = useRef(null);
