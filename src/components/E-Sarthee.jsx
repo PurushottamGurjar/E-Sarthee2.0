@@ -63,23 +63,39 @@ const ESarthee = () => {
       attribution: "&copy; OpenStreetMap |<a href=\"https://purushottam-gurjar.vercel.app/\">Purushottam Gurjar</a>",
     }).addTo(map.current);
 
-    socket.on("fetch-all-locations", (data) => {
-      const { latitude, longitude } = data;
+    const markers={};
+    const updateTimers={};
 
-      if (markerRef.current) {
-        markerRef.current.setLatLng([latitude, longitude]);
-        console.log("new location got");
+    socket.on("fetch-all-locations-byID", (data) => {
+      const { latitude, longitude , driverID} = data;
+
+      if (markers[driverID]) {
+        markers[driverID].setLatLng([latitude, longitude]);
       } else {
-        markerRef.current = L.marker([latitude, longitude], {
-          title: "Van Location",
+        markers[driverID] = L.marker([latitude, longitude], {
+          title: `E-van ${driverID}`,
         })
           .addTo(map.current)
-          .bindPopup("Van Live Location")
+          .bindPopup(`E-Van ${driverID}`)
           .openPopup();
       }
+
+       if(updateTimers[driverID]) clearTimeout(updateTimers[driverID]);
+    updateTimers[driverID]=setTimeout(()=>{
+        if(markers[driverID]){
+            map.current.removeLayer(markers[driverID]);
+            delete markers[driverID];
+            delete updateTimers[driverID];
+
+        }
+    },30000);
+
     });
 
+   
+
     return () => {
+      socket.off("fetch-all-locations-byID");
       map.current.remove();
     };
   }, []);
