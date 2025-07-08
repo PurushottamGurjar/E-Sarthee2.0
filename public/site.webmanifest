@@ -1,6 +1,8 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "E-Sarthee — Campus E-Vehicle Tracker",
+  "short_name": "E-Sarthee",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -17,5 +19,7 @@
   ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "orientation": "portrait",
+  "description": "Real-time navigation and E-vehicle tracking system built by Purushottam Gurjar for NIT Warangal campus."
 }
