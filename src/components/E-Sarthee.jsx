@@ -29,8 +29,8 @@ const ESarthee = () => {
         }
       });
       L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-        maxZoom: 20,
-        attribution: "&copy; <a href=\"https://carto.com/\">CartoDB</a> | <a href=\"https://purushottam-gurjar.vercel.app/\">Purushottam Gurjar</a>",
+        maxZoom: 30,
+        attribution: "&copy; <a href=\"https://carto.com/\">CartoDB</a> | <a href=\"https://purushottam.online\">Purushottam Gurjar</a>",
       }).addTo(map.current);
     }
     
@@ -48,8 +48,8 @@ const ESarthee = () => {
         }
       });
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 20,
-        attribution: "&copy; OpenStreetMap | <a href=\"https://purushottam-gurjar.vercel.app/\">Purushottam Gurjar</a>",
+        maxZoom: 30,
+        attribution: "&copy; OpenStreetMap | <a href=\"https://purushottam.online/\">Purushottam Gurjar</a>",
       }).addTo(map.current);
     }
     
@@ -57,9 +57,9 @@ const ESarthee = () => {
 
 
   useEffect(() => {
-    map.current = L.map("map").setView([27.48, 76.86], 15);
+    map.current = L.map("map").setView([17.983000, 79.53200], 16);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 20,
+      maxZoom: 30,
       attribution: "&copy; OpenStreetMap |<a href=\"https://purushottam-gurjar.vercel.app/\">Purushottam Gurjar</a>",
     }).addTo(map.current);
 
