@@ -69,12 +69,12 @@
 }
 
 .sarthee-menu-content{
-    height:calc(100vh - 45px);
+    height:calc(100vh - 43px);
     width:100vw;
     background-color:#f4f4f7;
     z-index: 10;
     position:fixed;
-    top:45px;
+    top:43px;
 }
 .sarthee-menu-content{
     padding-top: 70px;
