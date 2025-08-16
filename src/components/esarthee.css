@@ -9,16 +9,31 @@
     display:flex;
     justify-content: space-between;
     padding-left: 10px;
-    padding-right: 5px;
-    /* background-color: rgb(243, 239, 232); */
+    padding-right: 15px;
+    position:sticky;
+    top:0px;
+    z-index: 99;
+    width:100%;
+    box-sizing: border-box;
     background-color:#f4f4f7;
+    box-shadow: 0px 2px 2px rgba(45, 80, 161, 0.2);
 
 } 
 .sarthee-heading-first{
     color:green;
-    font-size:35px;
+    font-size:30px;
     font-weight:bold;
+    display:flex;
+    align-items: center;
+    gap:10px;
     font-family: sans-serif;
+}
+.e-sarthee-heading-logo{
+    width:30px;
+    height:30px;
+    border-radius:4px;
+    margin-top:6px;
+    box-shadow: 1px 0px 2px rgba(74, 136, 74, 0.5);
 }
 
 .sarthee-heading-second{
@@ -32,6 +47,139 @@
     border-radius: 10px;
     cursor:pointer;
 }
+
+
+.sarthee-map-about{
+  display:flex;
+  gap:20px;
+  padding:15px;
+  margin-top: 20px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.sarthee-map-about-map{
+  width:48%;
+  height:70vh;
+}
+.sarthee-map-about-about{
+  width:50%;
+  height:70vh;
+  border:2px solid black;
+  padding:20px;
+  box-sizing: border-box;
+  border-radius:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-around;
+
+}
+.sarthee-map-about-about-icon{
+  font-size:50px;
+}
+.sarthee-map-about-about-title{
+  font-size:clamp(1.5rem,4vw,3rem);
+}
+.sarthee-map-about-about-description{
+  margin-top: 15px;
+  font-size:clamp(1.1rem,1.8vw,2.3rem);
+}
+.sarthee-map-about-about:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+.sarthee-map-about-about-author{
+  font-size:clamp(1.3rem,2.2vw,2rem);
+  text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.why-sarthee-main {
+          display: flex;
+          flex-direction: column;
+          height:80vh;
+          font-family: 'Arial', sans-serif;
+        }
+
+        .why-sarthee-header {
+          padding: 20px;
+          text-align: center;
+        }
+
+        /* .why-sarthee-header {
+          padding: 60px 40px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        } */
+
+        /* .why-sarthee-header::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+          opacity: 0.3;
+        } */
+
+
+
+
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 25px;
+    padding: 0 15px;
+}
+
+.feature-cards .banner {
+  flex: 1 1 200px;     
+  max-width: 450px;    
+  border-radius: 12px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  color: white;
+}
+.feature-cards .banner:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+.feature-cards .banner h3 {
+  font-size: 1.2rem;
+  margin: 12px 0;
+  font-weight: bold;
+}
+
+.feature-cards .banner p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.feature-cards .icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+
+
+
+
 
 .nav-install{
     color:white;
@@ -53,9 +201,12 @@
 }
 
 #map{
-    height:calc(100vh - 50px);
-    width:100vw;
-    z-index:1;
+    height:70vh;
+    width:50vw;
+    z-index:9;
+    border-radius: 20px;
+    border:2px solid black;
+
 }
 .leaflet-control-attribution {
   color: #0BDA51;
@@ -142,6 +293,20 @@
         gap:20px;
     }
 }
+
+@media(max-width:900px){
+  .sarthee-map-about{
+    flex-direction:column;
+  }
+  .sarthee-map-about-about{
+    width:100%;
+  }
+  #map{
+    width:100%;
+  }
+  
+}
+
 @media(min-width:1024px){
     .sarthee-heading{
         background-color: rgb(243, 239, 232);
