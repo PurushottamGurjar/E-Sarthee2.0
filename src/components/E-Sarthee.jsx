@@ -590,7 +590,7 @@ const ESarthee = () => {
             className="sarthee-menu-install"
             onClick={() =>
               window.open(
-                "https://drive.google.com/file/d/1lSNbT9ABIMsVvzVEMcvJyil7_FJzCp4A/view?usp=sharing",
+                "https://drive.google.com/file/d/1iu45q_N4dNKALPMFch-fknrKSDDWVow0/view?usp=sharing",
                 "_self"
               )
             }
