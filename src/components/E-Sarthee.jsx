@@ -65,9 +65,22 @@ const ESarthee = () => {
 
     const markers={};
     const updateTimers={};
+    let dummyMarker;
+    dummyMarker = L.marker([17.9881070, 79.5306480], {
+        title: `E-Van `,
+      }).addTo(map.current)
+        .bindPopup(`E-Van at Charging Station. Will Resume shortly.`)
+        .openPopup();
 
     socket.on("fetch-all-locations-byID", (data) => {
       const { latitude, longitude , driverID} = data;
+      dummyMarker = L.marker([17.59172, 79.31503], {
+        title: `E-Van `,
+      }).addTo(map.current)
+        .bindPopup(`E-Van at Charging Station. Will Resume shortly.`)
+        .openPopup();
+
+
 
       if (markers[driverID]) {
         markers[driverID].setLatLng([latitude, longitude]);
