@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./esarthee.css";
 import { io } from "socket.io-client";
 import { sartheeIcons } from "../assets/myassets";
+import { ConnectIcons } from "../assets/myassets";
 
 const socket = io("https://e-sarthee.onrender.com");
 
@@ -351,44 +352,6 @@ const ESarthee = () => {
 
 
 
-      {/* <div className="sarthee-map-about ">
-        <div className="sarthee-map-about-map">
-          <div
-            style={{width: "50%", height: "70vh",borderRadius: "20px",border: "2px solid black", marginTop: "4px",}} id="map"></div>
-          <div className="sarthee-map-about-about">
-            <div className="sarthee-map-about-about-icon">🚐</div>
-            <h3 className="sarthee-map-about-about-title">Real-Time Van Tracking</h3>
-            <p className="sarthee-map-about-about-description">
-              Know exactly where your E-van is! No more 30-minute waits
-              wondering if the van will come. Track location, arrival time, and
-              route updates instantly.
-            </p>
-          </div>
-          <div className="why-sarthee-feature-card">
-            <div className="why-sarthee-card-icon">🚐</div>
-            <h3 className="why-sarthee-card-title">Real-Time Van Tracking</h3>
-            <p className="why-sarthee-card-description">
-              Know exactly where your E-van is! No more 30-minute waits
-              wondering if the van will come. Track location, arrival time, and
-              route updates instantly.
-            </p>
-          </div>
-
-          <div className="why-sarthee-feature-card">
-            <div className="why-sarthee-card-icon">🎓</div>
-            <h3 className="why-sarthee-card-title">
-              By Engineers, For Engineers
-            </h3>
-            <p className="why-sarthee-card-description">
-              Crafted by Purushottam Gurjar, a fellow engineer who understood
-              the daily struggle of campus commuting and designed the perfect
-              solution.
-            </p>
-          </div>
-
-          
-        </div>
-      </div> */}
 
       <div className="feature-cards">
         <div
@@ -396,19 +359,19 @@ const ESarthee = () => {
           style={{
             backgroundColor: secBgColor,
             color: color,
-            border: "1px solid #424d46ff",
+           border: "1px solid #424d46ff"
           }}
         >
           <div className="icon">💲</div>
           <h3>Zero Infrastructure Cost</h3>
-          <p style={{ color: theme === "light" ? "black" : "white" }}>
+          <p style={{ color: theme === "light" ? "black" : "white"  }}>
             Track locations without investing in expensive GPS hardware.
           </p>
         </div>
 
         <div
           className="banner"
-          style={{ backgroundColor: secBgColor, color: color }}
+          style={{ backgroundColor: secBgColor, color: color, border: "1px solid #424d46ff" }}
         >
           <div className="icon">📍</div>
           <h3>Precise Location</h3>
@@ -419,7 +382,7 @@ const ESarthee = () => {
 
         <div
           className="banner"
-          style={{ backgroundColor: secBgColor, color: color }}
+          style={{ backgroundColor: secBgColor, color: color , border: "1px solid #424d46ff"}}
         >
           <div className="icon">⚡</div>
           <h3>Real-time Tracking</h3>
@@ -430,7 +393,7 @@ const ESarthee = () => {
 
         <div
           className="banner"
-          style={{ backgroundColor: secBgColor, color: color }}
+          style={{ backgroundColor: secBgColor, color: color , border: "1px solid #424d46ff"}}
         >
           <div className="icon">🚌</div>
           <h3>Multi-Van System</h3>
@@ -439,6 +402,114 @@ const ESarthee = () => {
           </p>
         </div>
       </div>
+
+
+      <div className="footer-container" >
+        <footer className="footer" style={{backgroundColor:secBgColor }}>
+        <div className="floating-elements">
+          <div className="floating-circle"></div>
+          <div className="floating-circle"></div>
+          <div className="floating-circle"></div>
+        </div>
+
+        <div className="footer-content">
+          <div className="footer-grid">
+            
+            {/* About Section */}
+            <div className="footer-section">
+              <div className="section-header">
+                <div className="logo-icon">E</div>
+                <h3 className="section-title" style={{color:color}}>About E-Sarthee</h3>
+              </div>
+              <div className="gradient-line"></div>
+              <p className="about-text" style={{ color: theme === "light" ? "black" : "white" }} >
+                E-Sarthee transforms campus transportation through smart technology solutions. Born from student frustration with unpredictable van schedules, we deliver real-time tracking systems that eliminate waiting time. Our innovative platform connects students with precise location data, creating seamless mobility experiences across Campus.
+              </p>
+            </div>
+
+            {/* Quick Links Section */}
+            <div className="footer-section">
+              <div className="section-header">
+                <h3 className="section-title" style={{color:color}}>Quick Links</h3>
+              </div>
+              <div className="gradient-line"></div>
+              <div className="quick-links">
+                <a href="https://purushottam.online" className="quick-link" style={{ color: theme === "light" ? "black" : "white" }}>About Developer</a>
+                <a href="https://purushottam.online" className="quick-link" style={{ color: theme === "light" ? "black" : "white" }}>Contact</a>
+                <a href="https://github.com/PurushottamGurjar" className="quick-link" style={{ color: theme === "light" ? "black" : "white" }}>Contribute</a>
+                <a href="https://ai-divie.purushottam.online/" className="quick-link" style={{ color: theme === "light" ? "black" : "white" }}>AI-Divie</a>
+                <a href="https://www.linkedin.com/in/purushottam-gurjar/" className="quick-link" style={{ color: theme === "light" ? "black" : "white" }}>Connect</a>
+                <a href="https://linktr.ee/PurushottamGurjar" className="quick-link" style={{ color: theme === "light" ? "black" : "white" }}>LinkTree</a>
+              </div>
+            </div>
+
+            {/* Connect Section */}
+            <div className="footer-section">
+              <div className="section-header">
+                <h3 className="section-title" style={{color:color}}>Connect With Us</h3>
+              </div>
+              <div className="gradient-line"></div>
+              
+              <div className="connect-grid">
+                
+              
+
+                <a href="https://www.linkedin.com/in/purushottam-gurjar/" className="social-link" style={{ color: theme === "light" ? "black" : "white" }}>
+                  <img src={ConnectIcons.linkedIn} alt="purushottam github" style={{height:"20px",width:"20px", marginRight:"20px"}} />
+                  Linked In
+                </a>
+
+                <a href="https://github.com/PurushottamGurjar" className="social-link" style={{ color: theme === "light" ? "black" : "white" }}>
+                  <img src={ConnectIcons.github_icon} alt="purushottam github" style={{height:"20px",width:"20px", marginRight:"20px"}} />
+                  GitHub
+                </a>
+
+                <a href="https://purushottam.online" className="social-link" style={{ color: theme === "light" ? "black" : "white" }}>
+                  <img src={ConnectIcons.codeBoy} alt="purushottam github" style={{height:"25px",width:"25px", marginRight:"20px"}} />
+                  Purushottam
+                </a>
+
+                <a   href="https://wa.me/919983871351"  target="_blank" rel="noopener noreferrer" className="social-link" style={{ color: theme === "light" ? "black" : "white", textDecoration: "none", display: "flex", alignItems: "center" }}>
+                  <img src={ConnectIcons.whatsapp} alt="purushottam whatsapp" style={{ height: "30px", width: "30px", marginRight: "15px" }} />9983871351</a>
+
+
+                
+
+                
+              </div>
+
+              <div className="contact-info">
+                <div className="contact-item" style={{ color: theme === "light" ? "black" : "white" }}>
+                  <span className="contact-icon">📧</span>
+                  purushottamgurjar.dev@gmail.com
+                </div>
+                <div className="contact-item" style={{ color: theme === "light" ? "black" : "white" }}>
+                  <span className="contact-icon">📞</span>
+                  +91 9983871351
+                </div>
+                <div className="contact-item" style={{ color: theme === "light" ? "black" : "white" }}>
+                  <span className="contact-icon">📍</span>
+                  National Institute of Technology, Warangal || Campus.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Copyright Section */}
+          <div className="footer-bottom">
+            <div className="copyright" style={{ color: theme === "light" ? "black" : "white" }}>
+              © 2025 E-Sarthee. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      </div>
+
+
+
+
 
       {isMenu && (
         <div
@@ -452,7 +523,7 @@ const ESarthee = () => {
               color: theme === "light" ? "black" : "white",
             }}
             onClick={() =>
-              window.open("https://purushottam-gurjar.vercel.app", "_self")
+              window.open("https://purushottam.online", "_self")
             }
           >
             <div className="">About Developer</div>
