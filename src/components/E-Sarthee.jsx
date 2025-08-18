@@ -455,7 +455,8 @@ const ESarthee = () => {
               
 
                 <a href="https://www.linkedin.com/in/purushottam-gurjar/" className="social-link" style={{ color: theme === "light" ? "black" : "white" }}>
-                  <img src={ConnectIcons.linkedIn} alt="purushottam github" style={{height:"20px",width:"20px", marginRight:"20px"}} />
+                  {/* <img src={ConnectIcons.linkedIn} alt="purushottam github" style={{height:"20px",width:"20px", marginRight:"20px"}} /> */}
+                  <div style={{width:"20px", height:"20px" ,marginRight:"20px"}}>🌐</div>
                   Linked In
                 </a>
 

@@ -6,7 +6,7 @@ import rightarrow_icon from "./rightarrow_icon.svg"
 import blueMenu_Icon from "./blueMenu_Icon.svg"
 
 import github_icon from "./github_icon.png"
-import linkedIn from "./linkedIn.png"
+// import linkedIn from "./linkedIn.png"
 import whatsapp from "./whatsapp.png"
 import codeBoy from "./codeBoy.png"
 
@@ -21,7 +21,7 @@ export const sartheeIcons={
 
 export const ConnectIcons={
     github_icon,
-    linkedIn,
+    // linkedIn,
     whatsapp,
     codeBoy
 }
