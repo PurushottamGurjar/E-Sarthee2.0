@@ -15,6 +15,7 @@ const ESarthee = () => {
   const map = useRef(null);
   const markerRef = useRef(null);
   const marker1Ref = useRef(null);
+  const [isFullScreen,setIsFullScreen]=useState(false);
 
   const ChangeThemeToDark = () => {
     setTheme("dark");
@@ -58,12 +59,13 @@ const ESarthee = () => {
     }
   };
 
+
   useEffect(() => {
     map.current = L.map("map").setView([17.983, 79.532], 16);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 30,
       attribution:
-        '&copy; OpenStreetMap |<a href="https://purushottam-gurjar.vercel.app/">Purushottam Gurjar</a>',
+        '&copy; OpenStreetMap |<a href="https://purushottam.online">Purushottam  Gurjar  .</a>',
     }).addTo(map.current);
 
     const markers = {};
@@ -103,7 +105,7 @@ const ESarthee = () => {
       socket.off("fetch-all-locations-byID");
       map.current.remove();
     };
-  }, []);
+  }, [isFullScreen]);
 
   return (
     <div style={{ backgroundColor: bgColor, height: "auto", width: "100%" }}>
@@ -327,8 +329,30 @@ const ESarthee = () => {
         </div>
       </div>
 
-      <div className="sarthee-map-about">
-        <div id="map"></div>
+     <div className="sarthee-map-about">
+        <div id="map"  className={isFullScreen ? "full-screen" : "web-screen"} >
+          <div className="toggle-full-screen" style={{color:color, backgroundColor:bgColor}}  onClick={()=>setIsFullScreen(!isFullScreen)}>{isFullScreen?"Web Screen":"Full Screen"}
+            
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25px"
+              height="25px"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke={color}
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <path d="M9 9h6v6"></path>
+              <path d="M9 15l6-6"></path>
+            </svg>
+
+
+
+          </div>
+        </div>
 
           <div className="sarthee-map-about-about" style={{backgroundColor:secBgColor}}>
             <h3 className="sarthee-map-about-about-title" style={{color:color}}>
@@ -349,9 +373,6 @@ const ESarthee = () => {
           </div>
 
       </div>
-
-
-
 
       <div className="feature-cards">
         <div
@@ -402,7 +423,6 @@ const ESarthee = () => {
           </p>
         </div>
       </div>
-
 
       <div className="footer-container" >
         <footer className="footer" style={{backgroundColor:secBgColor }}>
@@ -515,7 +535,7 @@ const ESarthee = () => {
       {isMenu && (
         <div
           className="sarthee-menu-content"
-          style={{ backgroundColor: bgColor }}
+          style={{ backgroundColor: bgColor,zIndex:"1000" }}
         >
           <div
             className="sarthee-menu-each-item"
@@ -568,8 +588,8 @@ const ESarthee = () => {
               <path
                 d="M1 1.5L7 7.5L1 13.5"
                 stroke={color}
-                stroke-width="2"
-                stroke-linecap="round"
+                strokeWidth="2"
+                strokeLinecap="round"
               />
             </svg>
           </div>
@@ -598,8 +618,8 @@ const ESarthee = () => {
               <path
                 d="M1 1.5L7 7.5L1 13.5"
                 stroke={color}
-                stroke-width="2"
-                stroke-linecap="round"
+                strokeWidth="2"
+                strokeLinecap="round"
               />
             </svg>
           </div>
@@ -628,8 +648,8 @@ const ESarthee = () => {
               <path
                 d="M1 1.5L7 7.5L1 13.5"
                 stroke={color}
-                stroke-width="2"
-                stroke-linecap="round"
+                strokeWidth="2"
+                strokeLinecap="round"
               />
             </svg>
           </div>
@@ -652,8 +672,8 @@ const ESarthee = () => {
               <path
                 d="M1 1.5L7 7.5L1 13.5"
                 stroke={color}
-                stroke-width="2"
-                stroke-linecap="round"
+                strokeWidth="2"
+                strokeLinecap="round"
               />
             </svg>
           </div>
