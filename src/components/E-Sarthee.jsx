@@ -3,6 +3,8 @@ import "./esarthee.css";
 import { io } from "socket.io-client";
 import { sartheeIcons } from "../assets/myassets";
 import { ConnectIcons } from "../assets/myassets";
+import "./slider.css"
+
 
 const socket = io("https://e-sarthee.onrender.com");
 
@@ -75,7 +77,7 @@ const ESarthee = () => {
       title: `E-Van `,
     })
       .addTo(map.current)
-      .bindPopup(`E-Van at Charging Station. Will Resume shortly.`)
+      .bindPopup(`E-Van at Charging Station.`)
       .openPopup();
 
     socket.on("fetch-all-locations-byID", (data) => {
@@ -106,6 +108,54 @@ const ESarthee = () => {
       map.current.remove();
     };
   }, [isFullScreen]);
+
+
+  const [leftWidth, setLeftWidth]=useState(30);
+      const isSliding =useRef(false);
+      const parentRef=useRef(null);
+  
+      const HandleMouseDown=()=>{
+          isSliding.current=true;
+          document.addEventListener('mousemove', HandleMouseMove);
+          document.addEventListener('mouseup', HandleMouseUp);
+      }
+      const HandleMouseMove =(event)=>{
+          if(!isSliding || !parentRef.current) return;
+          const parentWidth=parentRef.current.offsetWidth;
+          const newWidth=(event.clientX/parentWidth)*100;
+          if(newWidth>5 && newWidth<95){
+              setLeftWidth(newWidth);
+          }
+      }
+      const HandleMouseUp=()=>{
+          isSliding.current=false;
+          document.removeEventListener('mousemove', HandleMouseMove);
+          document.removeEventListener('mouseup', HandleMouseUp);
+      }
+  
+  
+      const child2Ref=useRef(null);
+      const [height,setHeight]=useState(50);
+      const isHtSliding=useRef();
+  
+      const vtmsDown=()=>{
+          isHtSliding.current=true;
+          document.addEventListener('mousemove', vtmsmove);
+          document.addEventListener('mouseup',vtmsup);
+      }
+      const vtmsmove=(e)=>{
+          if(!isHtSliding || !child2Ref.current) return;
+          const ht=child2Ref.current.offsetHeight;
+          const newheight=(e.clientY/ht)*100;
+          setHeight(newheight);
+  
+      }
+      const vtmsup=()=>{
+          isSliding.current=false;
+          document.removeEventListener('mousemove',vtmsmove);
+          document.removeEventListener('mouseup',vtmsup);
+  
+      }
 
   return (
     <div style={{ backgroundColor: bgColor, height: "auto", width: "100%" }}>
@@ -329,8 +379,33 @@ const ESarthee = () => {
         </div>
       </div>
 
-     <div className="sarthee-map-about">
-        <div id="map"  className={isFullScreen ? "full-screen" : "web-screen"} >
+      {/* //slider starting from header */}
+      <div  ref={parentRef} className= "parent" style={{marginTop:"3px" , display:"flex"}}>
+            <div className="child1" style={{width:`${leftWidth}vw`}} > 
+              <div className="sarthee-map-about-about" style={{backgroundColor:secBgColor, height: "calc(100vh - 50px)" , width:"100%", borderRadius:"0px"}}>
+            <h3 className="sarthee-map-about-about-title" style={{color:color}}>
+              💭 Born from Real Experience
+            </h3>
+            <p className="sarthee-map-about-about-description"  style={{ color: theme === "light" ? "black" : "white" }}>
+              "During my second year, those daily 30-minute waits for the van
+              from blocks to department frustrated me. I thought - why can't we
+              just know where the van is? That's how E-sarthee was born. A
+              platform that puts campus transport at your fingertips, because no
+              student should waste time wondering when their ride will arrive."
+              - The E-sarthee Story
+            </p>
+            <h3 className="sarthee-map-about-about-author" style={{ color: theme === "light" ? "black" : "white" }}>
+              --- Purushottam Gurjar
+            </h3>
+          
+            
+
+
+          </div>
+            </div>
+            <div className="slider" style={{display:isFullScreen?"none":"block"}} onMouseDown={HandleMouseDown}/>
+            <div ref={child2Ref} className="child2" style ={{width:`${100-leftWidth-2}vw`}}>
+                <div id="map"  className={isFullScreen ? "full-screen" : "web-screen"}   style={{ height: "calc(100vh - 50px)" , width:"100%", borderRadius:"0px"}}>
           <div className="toggle-full-screen" style={{color:color, backgroundColor:bgColor}}  onClick={()=>setIsFullScreen(!isFullScreen)}>{isFullScreen?"Web Screen":"Full Screen"}
             
             <svg
@@ -353,8 +428,11 @@ const ESarthee = () => {
 
           </div>
         </div>
+            </div>
+        </div>
 
-          <div className="sarthee-map-about-about" style={{backgroundColor:secBgColor}}>
+    
+      <div className="sarthee-map-about-about" style={{backgroundColor:secBgColor , display:"none"}}>
             <h3 className="sarthee-map-about-about-title" style={{color:color}}>
               💭 Born from Real Experience
             </h3>
@@ -371,8 +449,6 @@ const ESarthee = () => {
             </h3>
 
           </div>
-
-      </div>
 
       <div className="feature-cards">
         <div

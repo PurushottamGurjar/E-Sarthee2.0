@@ -1,0 +1,81 @@
+.parent {
+  /* background-color:#f4f4f7; */
+  width: 100%;
+  display: flex;
+  height:calc(100vh - 50px);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y:hidden;
+}
+.parent::-webkit-scrollbar {
+  display: none;
+}
+.child1 {
+  /* background-color: greenyellow; */
+  width: 50vw;
+  height: calc(100vh - 50px);
+}
+
+.child2 {
+  /* background-color: rgb(113, 151, 56); */
+  width: 50vw;
+  height: 95vh;
+}
+
+.slider {
+  width: 5px;
+  /* background: #444; */
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+.child2first{
+    /* background-color: #8e7575; */
+    height:49vh;
+}
+
+.child2second{
+    /* background-color: #c58888; */
+    height:49vh;
+}
+
+.vtslider{
+    height: 5px;
+    /* background-color: #fff; */
+    cursor:ns-resize;
+}
+
+@media(max-width:1023px){
+  .child1{
+    display:none !important;
+  }
+  .child2{
+    width:100% !important;
+    height:75vh !important;
+  }
+  .parent{
+    height:75vh !important;
+  }
+  #map{
+    height:70vh !important;
+    width: 94vw !important;
+    margin-top: 10px !important;
+    border-radius: 10px !important;
+    
+  }
+  .slider{
+    display:none !important;
+  }
+  .sarthee-map-about-about{
+    display:flex !important;
+    gap:20px !important;
+    margin-top: -150px !important;
+    width:94vw !important;
+    height:auto !important;
+    margin: auto !important;
+  }
+  .toggle-full-screen{
+    display:none !important;
+  }
+
+}

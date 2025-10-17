@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  /* overflow-x: hidden; */
 }
 
 .sarthee-heading {
@@ -78,10 +79,10 @@
   margin-top: 15px;
   font-size: clamp(1.1rem, 1.8vw, 2.3rem);
 }
-.sarthee-map-about-about:hover {
+/* .sarthee-map-about-about:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-}
+} */
 .sarthee-map-about-about-author {
   font-size: clamp(1.3rem, 2.2vw, 2rem);
   text-align: right;
@@ -591,6 +592,9 @@
   .sarthee-menu {
     display: flex;
     gap: 20px;
+  }
+  .parent{
+    display:none;
   }
 }
 
